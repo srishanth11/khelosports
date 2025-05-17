@@ -1,256 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KheloSports Fitness Camp</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KheloSports Fitness Camp</title>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('images/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(21, 3, 3, 0.6);
+      z-index: -1;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.9);
+      margin: 40px 10%;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header img {
+      width: 150px;
+      animation: bounce 2s infinite;
+    }
+
+    header h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    nav a {
+      margin: 15px;
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      background: #ffcc00;
+      color: black;
+    }
+
+    footer {
+      background: linear-gradient(180deg, #3A1C97, #210C61);
+      color: white;
+      padding: 40px 10%;
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .footer-links a:hover {
+      color: #FFD700;
+    }
+
+    .social-links img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.7;
+      margin-top: 20px;
+    }
+
+    .event-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .event-text {
+      flex: 1;
+      z-index: 2;
+    }
+
+    .event-image {
+      width: 150px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      margin-left: 20px;
+    }
+
+    .event-image:hover {
+      transform: scale(0.95);
+    }
     
-<style>
-        /* Global Styles */
-        
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('images/background.jpeg') no-repeat center center fixed;
-    background-size: cover;
-}
 
-/* Overlay (optional for darkening the background) */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(21, 3, 3, 0.6);
-    z-index: -1;
-}
-
-/* White Section Cards */
-.section {
-    padding: 50px 20px;
-    background-color: rgba(255, 255, 255, 0.85); /* less bright white */
-    margin: 40px auto;
-    border-radius: 15px;
-    width: 85%;
-    max-width: 1000px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-
-/* Header */
-header {
-    text-align: center;
-    color: white;
-    padding: 60px 20px;
-    position: relative;
-    z-index: 1;
-}
-
-header img {
-    width: 150px;
-    animation: bounce 2s infinite;
-}
-
-header h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-/* Navigation */
-nav a {
-    margin: 15px;
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-nav a:hover {
-    background: #ffcc00;
-    color: black;
-}
-
-/* Footer */
-footer {
-    background: linear-gradient(180deg, #3A1C97, #210C61);
-    color: white;
-    padding: 40px 10%;
-    text-align: left;
-    font-family: 'Poppins', sans-serif;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    margin: 5px 0;
-}
-
-.footer-links a:hover {
-    color: #FFD700;
-}
-
-.social-links img {
-    width: 30px;
-    margin-right: 10px;
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.7;
-    margin-top: 20px;
-}
-
-/* Event Section Styling */
-.event-section {
-    position: relative;
-    overflow: hidden;
-}
-
-.event-content {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.event-text {
-    z-index: 2;
-    position: relative;
-}
-
-.event-image {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    width: 150px;
-    height: 100xp;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    transform: rotate(0deg);
-    transition: transform 0.3s ease;
-    z-index: 1;
-}
-
-.event-image:hover {
-    transform: scale(0.5) rotate(0deg);
-}
-
-
-/* Animations */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-</style>
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <img src="images/khelophoto.jpg" alt="KheloSports Logo">
-        <h1>Welcome to KheloSports </h1>
-        <nav>
-            <h3>Kids engagement and sports program</h3>
-        </nav>
+  <header>
+    <img src="images/khelophoto.jpg" alt="KheloSports Logo" />
+    <h1>Welcome to KheloSports</h1>
+    <nav>
+      <h3>Kids engagement and sports program</h3>
+    </nav>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./coaches.html">Coaches</a>
+      <a href="./program.html">Programs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-
-        <nav>
-            <a href="#home">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./coaches.html">Coaches</a>
-            <a href="#programs">Programs</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-<!--Event section-->
-    <section id="events" class="section ">
+  <section id="events" class="section">
     <div class="event-content">
-        <div class="event-text">
-            <h2>Sports Events</h2>
-            <ul>
-                <li>BasketBall, handball, volleyball, cricket, gymnastics, etc.</li>
-                <li>Fitness boot camps High-intensity workouts designed to challenge all levels.</li>
-                <li>Children will be engaged with expert coaches with specialised training.</li>
-            </ul>
-        </div>
-        <img src="images/ke.jpg" alt="Sports Photo" class="event-image">
+      <div class="event-text">
+        <h2>Sports Events</h2>
+        <ul>
+          <li>BasketBall, handball, volleyball, cricket, gymnastics, etc.</li>
+          <li>Fitness boot camps: High-intensity workouts designed to challenge all levels.</li>
+          <li>Children will be engaged with expert coaches with specialised training.</li>
+        </ul>
+      </div>
+      <img src="images/ke.jpg" alt="Sports Photo" class="event-image" />
     </div>
-</section>
+  </section>
 
-
-    <!-- Programs Section -->
-    <section id="programs" class="section ">
+  <section id="programs" class="section">
     <div class="event-content">
-        <div class="event-text">
-            <h2>Our Programs</h2>
-            <p>Football, Basketball, Cricket, and more!</p>
-            
-        </div>
-        <img src="images/re.png" alt="Sports Photo" class="event-image">
+      <div class="event-text">
+        <h2>Our Programs</h2>
+        <p>Football, Basketball, Cricket, and more!</p>
+      </div>
+      <img src="images/re.png" alt="Sports Photo" class="event-image" />
     </div>
-    </section>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="event-content">
-        <div class="event-text">
+  <section id="contact" class="section">
+    <div class="event-content">
+      <div class="event-text">
         <h2>Contact Us</h2>
         <p>Email: info@khelosports.com | Phone: 123-456-7890</p>
-        </div>
-        <img src="images/pe.jpg" alt="Sports Photo" class="event-image">
+      </div>
+      <img src="images/pe.jpg" alt="Sports Photo" class="event-image" />
     </div>
-    </section>
+  </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <h3>Site Map</h3>
+        <a href="#">Home</a>
+        <a href="#">Programs</a>
+        <a href="#">Personal Training</a>
+        <a href="#">Careers</a>
+        <a href="#">Join Us</a>
+      </div>
 
-            <!-- About Section -->
+      <div class="social-links">
+        <h3>Follow Us</h3>
+        <a href="#" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/khelo_sports_/" target="_blank" title="Instagram"><img src="images/instagram.jpeg" alt="Instagram"></a>
+        <a href="#" target="_blank"><img src="images/x.png" alt="X"></a>
+      </div>
+    </div>
 
-            <!-- Site Map -->
-            <div class="footer-links">
-                <h3>Site Map</h3>
-                <a href="#">Home</a>
-                <a href="#">Programs</a>
-                <a href="#">Personal Training</a>
-                <a href="#">Careers</a>
-                <a href="#">Join Us</a>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links">
-                <h3>Follow Us</h3>
-                <a href="#"target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="#"target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
-                <a href="https://www.instagram.com/khelo_sports_/" target="_blank" title="Instagram"><img src="images/instagram.jpeg" alt="Instagram"></a>
-                <a href="#"target="_blank"><img src="images/x.png" alt="X"></a>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <hr style="margin: 20px 0; border: 0.5px solid rgba(255, 255, 255, 0.3);">
-        <div class="footer-bottom">
-            <p>
-                <a href="#">Terms & Conditions</a> |
-                <a href="#">Privacy Policy</a> |
-                <a href="#">Refund/Cancellation Policy</a>
-            </p>
-            <p>&copy; 2025 KheloSports. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+    <hr style="margin: 20px 0; border: 0.5px solid rgba(255, 255, 255, 0.3);" />
+    <div class="footer-bottom">
+      <p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Refund/Cancellation Policy</a>
+      </p>
+      <p>&copy; 2025 KheloSports. All Rights Reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
