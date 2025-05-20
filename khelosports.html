@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KheloSports Fitness Camp</title>
-
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -12,6 +11,8 @@
       padding: 0;
       background: url('images/background.jpeg') no-repeat center center fixed;
       background-size: cover;
+      position: relative;
+      z-index: 0;
     }
 
     body::before {
@@ -34,8 +35,6 @@
       text-align: center;
       color: white;
       padding: 60px 20px;
-      position: relative;
-      z-index: 1;
     }
 
     header img {
@@ -49,15 +48,20 @@
       margin: 15px 0;
     }
 
+    nav h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
     nav a {
-      margin: 15px;
-      font-size: 20px;
+      margin: 8px;
+      font-size: 18px;
       text-decoration: none;
       color: white;
       font-weight: bold;
-      padding: 8px 15px;
+      padding: 8px 14px;
       border-radius: 5px;
-      transition: all 0.3s ease-in-out;
+      transition: background 0.3s ease-in-out, color 0.3s;
     }
 
     nav a:hover {
@@ -65,34 +69,101 @@
       color: black;
     }
 
+    .event-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .event-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .event-image {
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .event-image:hover {
+      transform: scale(0.95);
+    }
+
+    .container {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .container img {
+      width: 320px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      transition: transform 0.3s;
+    }
+
+    .container img:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       background: linear-gradient(180deg, #3A1C97, #210C61);
       color: white;
       padding: 40px 10%;
-      text-align: left;
-      font-family: 'Poppins', sans-serif;
     }
 
     .footer-content {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-links,
+    .social-links {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links h3,
+    .social-links h3 {
+      margin-bottom: 10px;
     }
 
     .footer-links a {
+      display: block;
       color: white;
       text-decoration: none;
-      display: block;
       margin: 5px 0;
+      transition: color 0.3s ease;
     }
 
     .footer-links a:hover {
       color: #FFD700;
     }
 
+    .social-links a {
+      margin-right: 10px;
+    }
+
     .social-links img {
       width: 30px;
-      margin-right: 10px;
+      height: 30px;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links img:hover {
+      transform: scale(1.1);
     }
 
     .footer-bottom {
@@ -102,38 +173,35 @@
       margin-top: 20px;
     }
 
-    .event-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .footer-bottom a {
+      color: white;
+      text-decoration: underline;
+      margin: 0 5px;
     }
-
-    .event-text {
-      flex: 1;
-      z-index: 2;
-    }
-
-    .event-image {
-      width: 150px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-      margin-left: 20px;
-    }
-
-    .event-image:hover {
-      transform: scale(0.95);
-    }
-    
 
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+
+    @media (max-width: 768px) {
+      .event-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .event-image {
+        margin: 0 auto;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 4px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -141,13 +209,11 @@
     <h1>Welcome to KheloSports</h1>
     <nav>
       <h3>Kids engagement and sports program</h3>
-    </nav>
-    <nav>
-      <a href="#home">Home</a>
+      <a href="./khelosports.html">Home</a>
       <a href="./about.html">About</a>
       <a href="./coaches.html">Coaches</a>
       <a href="./program.html">Programs</a>
-      <a href="#contact">Contact</a>
+      <a href="./contact.html">Contact</a>
     </nav>
   </header>
 
@@ -156,12 +222,12 @@
       <div class="event-text">
         <h2>Sports Events</h2>
         <ul>
-          <li>BasketBall, handball, volleyball, cricket, gymnastics, etc.</li>
-          <li>Fitness boot camps: High-intensity workouts designed to challenge all levels.</li>
-          <li>Children will be engaged with expert coaches with specialised training.</li>
+          <li>Basketball, handball, volleyball, cricket, gymnastics, and more.</li>
+          <li>Fitness boot camps: High-intensity workouts for all levels.</li>
+          <li>Expert coaches with specialized training.</li>
         </ul>
       </div>
-      <img src="images/ke.jpg" alt="Sports Photo" class="event-image" />
+      <img src="images/ke.jpg" alt="Kids playing sports" class="event-image" />
     </div>
   </section>
 
@@ -169,19 +235,40 @@
     <div class="event-content">
       <div class="event-text">
         <h2>Our Programs</h2>
-        <p>Football, Basketball, Cricket, and more!</p>
+        <p>We offer multi-sport training for kids – basketball, football, cricket, gymnastics & athletics – in fun, skill-based sessions.</p>
+        <ul>
+          <li><strong>Plan 1</strong> – ₹1400/year<br>1 session/week · 36 sessions/year</li>
+          <li><strong>Plan 2</strong> – ₹1999/year<br>1 session/week + 🎽 T-shirts, 🏅 medals, 📜 certificates</li>
+          <li><strong>Plan 3</strong> – ₹2800/year<br>2 sessions/week + All Plan 2 perks</li>
+        </ul>
       </div>
-      <img src="images/re.png" alt="Sports Photo" class="event-image" />
+      <img src="images/re.png" alt="Training Programs" class="event-image" />
     </div>
   </section>
 
   <section id="contact" class="section">
     <div class="event-content">
       <div class="event-text">
-        <h2>Contact Us</h2>
-        <p>Email: info@khelosports.com | Phone: 123-456-7890</p>
+        <h2>Snap Shorts</h2>
+        <div class="container">
+          <img src="images/pe20.jpg" alt="Snapshot 1" />
+          <img src="images/pe9.jpg" alt="Snapshot 2" />
+          <img src="images/pe17.jpg" alt="Snapshot 3" />
+          <img src="images/pe15.jpg" alt="Snapshot 4" />
+          <img src="images/pe12.jpg" alt="Snapshot 5" />
+          <img src="images/pe1.jpg" alt="Snapshot 6" />
+          <img src="images/pe2.jpg" alt="Snapshot 6" />
+          <img src="images/pe3.jpg" alt="Snapshot 6" />
+          <img src="images/pe4.jpg" alt="Snapshot 6" />
+          <img src="images/pe5.jpg" alt="Snapshot 6" />
+          <img src="images/pe6.jpg" alt="Snapshot 6" />
+          <img src="images/pe7.jpg" alt="Snapshot 6" />
+          <img src="images/pe10.jpg" alt="Snapshot 6" />
+          <img src="images/pe13.jpg" alt="Snapshot 6" />
+          <img src="images/pe18.jpg" alt="Snapshot 6" />
+
+        </div>
       </div>
-      <img src="images/pe.jpg" alt="Sports Photo" class="event-image" />
     </div>
   </section>
 
@@ -198,10 +285,10 @@
 
       <div class="social-links">
         <h3>Follow Us</h3>
-        <a href="#" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-        <a href="#" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
-        <a href="https://www.instagram.com/khelo_sports_/" target="_blank" title="Instagram"><img src="images/instagram.jpeg" alt="Instagram"></a>
-        <a href="#" target="_blank"><img src="images/x.png" alt="X"></a>
+        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/khelo_sports_/" target="_blank"><img src="images/instagram.jpeg" alt="Instagram"></a>
+        <a href="#"><img src="images/x.png" alt="Twitter / X"></a>
       </div>
     </div>
 
