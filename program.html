@@ -225,6 +225,40 @@ footer {
         display: inline-block;
         margin: 5px 4px;
       }
+
+      .created-by {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(33, 33, 33, 0.9);
+  color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.creator-photo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: cover;
+  border: none;
+  background: none;
+}
+
+.creator-info a {
+  color: #01283b;
+  text-decoration: none;
+}
+
+.creator-info a:hover {
+  text-decoration: underline;
+}
     }
 
 </style>
@@ -331,10 +365,22 @@ footer {
         <h3>Follow Us</h3>
         <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
         <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-        <a href="https://www.instagram.com/khelo_sports_/" target="_blank"><img src="images/instagram.jpeg" alt="Instagram"></a>
+        <a href="https://www.instagram.com/khelo_sports_/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
         <a href="#"><img src="images/x.png" alt="Twitter / X"></a>
       </div>
-    </div>
+    
+
+    <section class="created-by">
+  <img src="images/sri.png" alt="Your Photo" class="creator-photo" />
+  <div class="creator-info">
+    <p>Website created by <strong>A. Saisrishanth</strong><br /><P>My profiles</P>
+      <a href="https://www.linkedin.com/in/saisrishanth/" target="_blank"><img src="images/linkedin.png" alt="linkedin"></a> |
+      <a href="https://github.com/srishanth11" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+    </p>
+    
+    
+  </section>
+</div>
 
     <hr style="margin: 20px 0; border: 0.5px solid rgba(255, 255, 255, 0.3);" />
     <div class="footer-bottom">
