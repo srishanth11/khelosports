@@ -198,50 +198,101 @@
         display: inline-block;
         margin: 5px 4px;
       }
-
-      .created-by {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background-color: rgba(33, 33, 33, 0.9);
-  color: #f0f0f0;
-  padding: 10px 15px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(4px);
-}
-
-.creator-photo {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  object-fit: cover;
-  border: none;
-  background: none;
-}
-
-.creator-info a {
-  color: #01283b;
-  text-decoration: none;
-}
-
-.creator-info a:hover {
-  text-decoration: underline;
-}
-
-
-
     }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      padding: 0 30px;
+      justify-items: center;
+    }
+
+    .client-card {
+      background: #f9f9f9;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      text-align: center;
+      padding: 20px 10px 60px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .client-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .client-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .client-name {
+      background: linear-gradient(135deg, #2fdb52, #3e4fca);
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+    }
+    .clients-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.client-tile {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 180px;
+  padding: 20px 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.client-tile img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.client-tile p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
   </style>
 </head>
 
 <body>
 
-  
   <header>
     <img src="images/khelophoto.jpg" alt="KheloSports Logo" />
     <h1>Welcome to KheloSports</h1>
@@ -269,43 +320,46 @@
     </div>
   </section>
 
-  <section id="programs" class="section">
-    <div class="event-content">
-      <div class="event-text">
-        <h2>Our Programs</h2>
-        <p>We offer multi-sport training for kids – basketball, football, cricket, gymnastics & athletics – in fun, skill-based sessions.</p>
-        <ul>
-          <li><strong>Plan 1</strong> – ₹1400/year<br>1 session/week · 36 sessions/year</li>
-          <li><strong>Plan 2</strong> – ₹1999/year<br>1 session/week + 🎽 T-shirts, 🏅 medals, 📜 certificates</li>
-          <li><strong>Plan 3</strong> – ₹2800/year<br>2 sessions/week + All Plan 2 perks</li>
-        </ul>
-      </div>
-      <img src="images/re.png" alt="Training Programs" class="event-image" />
+ <section id="clients" class="section">
+  <h2 class="section-title">Our Clients</h2>
+  <div class="clients-wrapper">
+    <div class="client-tile">
+      <img src="images/chi.png" alt="Chipotle Logo">
+      <p>Chipotle</p>
     </div>
-  </section>
+    <div class="client-tile">
+      <img src="images/euk.png" alt="Eukarya Logo">
+      <p>Eukarya</p>
+    </div>
+    <div class="client-tile">
+      <img src="images/happy.png" alt="Happy Kids Logo">
+      <p>Happy Kids</p>
+    </div>
+    <div class="client-tile">
+      <img src="images/time.jpg" alt="Time Kids Logo">
+      <p>Time Kids</p>
+    </div>
+    <div class="client-tile">
+      <img src="images/divya.png" alt="Divya Logo">
+      <p>Divya</p>
+    </div>
+    <p class="clients-subtitle">Trusted by 50+ Clients Across the Nation</p>
+  </div>
+</section>
+
 
   <section id="contact" class="section">
-    <div class="event-content">
-      <div class="event-text">
-        <h2>Snap Shots</h2>
-        <div class="container">
-          <img src="images/pe20.jpg" alt="Snapshot 1" />
-          <img src="images/pe9.jpg" alt="Snapshot 2" />
-          <img src="images/pe17.jpg" alt="Snapshot 3" />
-          <img src="images/pe15.jpg" alt="Snapshot 4" />
-          <img src="images/pe12.jpg" alt="Snapshot 5" />
-          <img src="images/pe1.jpg" alt="Snapshot 6" />
-          <img src="images/pe2.jpg" alt="Snapshot 6" />
-          <img src="images/pe3.jpg" alt="Snapshot 6" />
-          <img src="images/pe4.jpg" alt="Snapshot 6" />
-          <img src="images/pe5.jpg" alt="Snapshot 6" />
-          <img src="images/pe6.jpg" alt="Snapshot 6" />
-          <img src="images/pe7.jpg" alt="Snapshot 6" />
-          <img src="images/pe10.jpg" alt="Snapshot 6" />
-          <img src="images/pe13.jpg" alt="Snapshot 6" />
-          <img src="images/pe18.jpg" alt="Snapshot 6" />
-
-        </div>
+    <div class="event-text">
+      <h2>Snap Shots</h2>
+      <div class="container">
+        <img src="images/pe20.jpg" alt="Snapshot 1" />
+        <img src="images/pe9.jpg" alt="Snapshot 2" />
+        <img src="images/pe17.jpg" alt="Snapshot 3" />
+        <img src="images/pe15.jpg" alt="Snapshot 4" />
+        <img src="images/pe12.jpg" alt="Snapshot 5" />
+        <img src="images/pe1.jpg" alt="Snapshot 6" />
+        <img src="images/pe2.jpg" alt="Snapshot 7" />
+        <img src="images/pe3.jpg" alt="Snapshot 8" />
       </div>
     </div>
   </section>
@@ -313,35 +367,23 @@
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <h3>Site Map</h3>
+        <h3>Quick Links</h3>
         <a href="./khelosports.html">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./coaches.html">Coaches</a>
-      <a href="./program.html">Programs</a>
-      <a href="./contact.html">Contact</a>
+        <a href="./about.html">About</a>
+        <a href="./program.html">Programs</a>
+        <a href="./contact.html">Contact</a>
       </div>
-
       <div class="social-links">
         <h3>Follow Us</h3>
-        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-        <a href="https://www.instagram.com/khelo_sports_/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="images/x.png" alt="Twitter / X"></a>
+        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
       </div>
-
-   
-      
     </div>
-
-    <hr style="margin: 20px 0; border: 0.5px solid rgba(255, 255, 255, 0.3);" />
     <div class="footer-bottom">
-      <p>
-        <a href="./PDF SCHOOL.pdf">Terms & Conditions</a> |
-        <a href="./PDF SCHOOL.pdf">Privacy Policy</a> |
-        <a href="./PDF SCHOOL.pdf">Refund/Cancellation Policy</a>
-      </p>
-      <p>&copy; 2025 KheloSports. All Rights Reserved.</p>
+      &copy; 2025 KheloSports. All rights reserved. | <a href="#">Privacy Policy</a>
     </div>
   </footer>
+
 </body>
 </html>
